@@ -7,6 +7,19 @@ Vagrant.configure("2") do |config|
   config.vm.provider "virtualbox" do |v|
     v.name   = "vagrant-centos7-pbspro"
     v.memory = "2048"
+
+    v.gui    = false
+    v.customize [
+      "modifyvm",               :id,
+      "--cableconnected1",      "on",
+      "--hwvirtex",             "on",
+      "--nestedpaging",         "on",
+      "--largepages",           "on",
+      "--ioapic",               "on",
+      "--pae",                  "on",
+      "--paravirtprovider",     "kvm",
+    ]
+
   end
 
   config.vm.provision("root", type: "shell",
