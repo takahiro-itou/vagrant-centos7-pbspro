@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
                       virtualbox__intnet: "vmnet")
 
       node.vm.provider "virtualbox" do |v|
-        v.name   = "%s-centos7-pbspro" % name
+        v.name   = "%s-centos7-pbspro" % [name]
         v.memory = "2048"
 
         v.gui    = false
