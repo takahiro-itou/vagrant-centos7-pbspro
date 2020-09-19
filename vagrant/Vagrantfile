@@ -1,6 +1,8 @@
 ##  -*-  coding: utf-8; mode: ruby -*-  ##
 ##  vi: set ft=ruby
 
+load  File.expand_path("DetectOS.rb")  if File.exists?("DetectOS.rb")
+
 Vagrant.configure("2") do |config|
   config.vm.box = "takahiro-itou/centos7-pbspro"
 
